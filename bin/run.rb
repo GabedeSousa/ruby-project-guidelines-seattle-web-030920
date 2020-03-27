@@ -2,4 +2,17 @@ require_relative '../config/environment'
 
 
 
-puts "HELLO WORLD"
+
+
+
+
+
+# app = SwimmingApp.new
+# app.run
+Swim.run
+
+
+
+
+
+# puts "Hello World"

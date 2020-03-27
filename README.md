@@ -57,3 +57,45 @@ Projects need to be approved prior to launching into them, so take some time to 
 # in config/environment.rb add this line:
 ActiveRecord::Base.logger = nil
 ```
+=====================================================================================================
+
+
+iSwim App 
+Setup
+First, run bundle install from the root directory to install dependencies. Next run rake db:migrate to setup the database tables.
+
+Random data has been generated already and stored. 
+
+Getting Started
+
+Run ruby bin/run.rb to start the program.
+From the main menu, type help to list all of the available commands. From the main menu you can get a list of practices, viewers, countries and coaches.
+Models: Viewer < Rating > Practice
+Viewer
+has_many :practices
+Rating
+belongs_to :practice
+belongs_to :viewer
+Practice
+has_many :ratings
+has_many :viewers, through: :ratings
+Data
+Viewers
+@name : name of the viewer
+@country : country of the viewer
+Ratings
+@rating : represented as a integer between 1 and 10
+Practice
+@title : title of the practice(Sprint, Mid Distance or Distance)
+@coach : coach name who made the practice
+@country : country where practice was made
+@practice : Swim practice
+User Stories
+As a user, I want to be able to look at what practices a given viewer has rated.
+As a user, I want to be able to look at the many different practices around the world
+As a user, I want to be able to create a practice
+As a user, I want to be able to rate diferent practices
+
+TODO
+Improve the way input is validated
+Add functionality for the user
